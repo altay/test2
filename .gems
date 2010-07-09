@@ -1,0 +1,2 @@
+haml -v '>= 3.0.13'
+fastercsv
