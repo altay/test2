@@ -1,0 +1,39 @@
+!!!
+%html{:lang => "en", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
+    %title
+      - if @title
+        = @title
+      - else
+        SongsForKD.com : 
+        = controller.controller_name
+        \: #{controller.action_name}
+    -#<title>The Rock (1996)</title>
+    = stylesheet_link_tag '/stylesheets/screen.css', :media => 'screen, projection'
+    = stylesheet_link_tag '/stylesheets/print.css', :media => 'print'
+    /[if lt IE 8]
+      = stylesheet_link_tag '/stylesheets/ie.css', :media => 'screen, projection'
+    = stylesheet_link_tag '/stylesheets/kd.css', :media => 'screen, projection'
+    //= javascript_include_tag('http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js')
+    = javascript_include_tag('http://static.delicious.com/js/playtagger.js')
+  %body
+    .main_container
+      .header
+        %h1#logo= (@header_text || "Songs for KD!")
+        /
+          .subheader
+            - if @active_sort
+              = yield :sort_menu
+            - unless @no_suggestion_box
+              #suggestion_box
+                - form_tag("/names/create", :method=>"post") do 
+                  Suggest a name:&nbsp;
+                  = text_field_tag("name")
+                  = submit_tag("Submit", :class=>"name_submit")
+      .meat
+        - if flash[:notice]
+          %p{:class => "notice"}= flash[:notice]
+        = yield
+        .clear
+      = javascript_include_tag('application')

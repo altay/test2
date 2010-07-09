@@ -1,0 +1,30 @@
+- @header_text = "Songs for KD!"
+
+%div{:class=>'booyah'}
+  %p
+    Kerry -
+  %p
+    Do you remember your first monkeylab class?
+  %p
+    Everyone met in the conference room, so you could all be assigned to projects. As soon as I saw you there, I thought, "Please let her be in my group. Please let her be in my group." Then I started thinking, "Dude, don't get your hopes up. There are so many people in this room, and you only get two or three. What are the chances <em>she'll</em> be one of them?" (I admit, at this point, I got a little distracted. I was counting people so I could work out the odds in my head.)  But then... booyah! You were assigned to our project.  And you turned out to be even cooler than I had hoped.
+  %p
+    And now -- what, 8 years later? -- here we are, together in Nashville. Serendipity, baby. 
+  %p
+    Anyways, here's some music! :) 
+  %p
+    A lot of these songs make me think of you. The others are important to me in different ways, but I still want to share them with you. We really should listen to them together, in person, but you'll have to make do with this until we're in the same city again.
+  %p
+    Let's not wait another 8 years before that happens, ok?
+  %p{:style=>'text-align: right;margin-right: 20px'}
+    \- Altay
+    %br
+    7/10/2010
+    %br
+    Nashville, TN
+%dl#songs
+  - @songs.each do |s|
+    %dt
+      %strong= link_to(s.title, s.filepath)
+      by
+      %span= s.artist
+    %dd= s.description

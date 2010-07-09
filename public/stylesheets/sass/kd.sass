@@ -1,0 +1,78 @@
+!lightest = #6899d3
+!light = #4284d3
+!middle = #0e53a7
+!dark = #274e7d
+!darkest = #04346c
+=round
+  -moz-border-radius: 10px
+  -webkit-border-radius: 10px
+=round_top
+  -moz-border-radius: 10px 10px 0 0
+  -webkit-border-top-right-radius: 10px
+  -webkit-border-top-left-radius: 10px
+=round_small
+  -moz-border-radius: 5px
+  -webkit-border-radius: 5px
+=text_shadow
+  text-shadow: 2px 2px 2px #222
+=box_shadow
+  -webkit-box-shadow: 0px 0px 15px !dark
+  -moz-box-shadow: 0px 0px 15px !dark
+
+a
+  color: !darkest
+body, html
+  min-height: 100%
+body
+  background-color: !darkest
+  background: -webkit-gradient(linear, left top, left bottom, from(!lightest), to(!darkest)) //!lightest //#4284d3 //#7090ac
+  background: -moz-linear-gradient(top, !lightest, !darkest)
+  color: #222
+  font-family: helvetica neue, helvetica, arial, sans-serif
+  font-size: 13px
+  margin: 0
+  padding: 0
+  .main_container
+    background: #efefef
+    margin: 20px auto
+    width: 700px
+    min-height: 90%
+    +round
+    +box_shadow
+    .header
+      h1
+        background: !dark
+        color: white //!darkest
+        margin: 0
+        padding: 10px 20px 10px
+        +round_top
+    .meat
+      border-top: 1px solid !darkest
+      padding: 5px 20px
+      dl
+        padding: 20px 10px
+      dt
+        color: #555
+        strong span
+          display: none
+        a
+          font-size: 16px
+        span
+          color: !darkest
+      dd
+        margin: 3px 0 15px
+      .img_border
+        text-align: center
+        margin-top: 50px
+        img
+          //+round
+          +box_shadow
+        p
+          text-align: right
+          margin: 40px 100px
+      .booyah
+        background: #fefefe
+        padding: 5px 10px
+        margin: 10px 0
+        +round
+        font-size: 14px
