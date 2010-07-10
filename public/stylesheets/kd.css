@@ -37,8 +37,6 @@ body {
         padding: 20px 10px; }
       body .main_container .meat dt {
         color: #555555; }
-        body .main_container .meat dt strong span {
-          display: none; }
         body .main_container .meat dt a {
           font-size: 16px; }
         body .main_container .meat dt span {

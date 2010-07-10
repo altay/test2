@@ -24,7 +24,7 @@
 %dl#songs
   - @songs.each do |s|
     %dt
-      %strong= link_to(s.title, s.filepath)
+      %strong= link_to(s.title, "http://mightyquiz.com:8004/#{s.filepath}")
       by
       %span= s.artist
     %dd= s.description
