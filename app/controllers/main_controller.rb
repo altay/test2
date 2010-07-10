@@ -1,14 +1,22 @@
 class MainController < ApplicationController
 
-  def index
+  before_filter :check_pw, :except=>[:index]
+
+  def check_pw
+    logger.info(session.inspect)
+    if (session.nil? || session[:pw_ok].nil?)
+      redirect_to(:controller=>'main', :action=>'index')
+    end
   end
 
-=begin
-  def add_song
+  def index
+    session[:pw_ok]=nil
     return unless request.post?
-    @song = 
+    if (params[:pw] && ['monkeypoop', 'monkey poop'].member?(params[:pw]))
+      session[:pw_ok] = true
+      redirect_to(:controller=>"main", :action=>"from") and return
+    end
   end
-=end
 
   def booyah
     @songs = Song.all

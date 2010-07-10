@@ -1,1 +1,13 @@
-.main blerg
+- @header_text = "What's the secret password?"
+.img_border
+  = image_tag('tamarin.jpg')
+  %br
+  %br
+  %br
+  %form{:action=>"/main/index", :method=>:post}
+    = text_field_tag('pw')
+    = submit_tag("let's do this")
+  %br
+  %br
+  %br
+
